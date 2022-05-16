@@ -19,10 +19,10 @@ const syncDatabase = async () => {
     // - Make a connection between the Node.js application (this server app) and the Postgres database application.
     // - Create new tables (according to the models) in the Postgres database application, dropping tables first if they already existed
     await db.sync({force: true});
-    console.log('------Synced to database--------')
+    console.log('------Synced to db--------')
     // Database Seeding
     await seedDB();  
-    console.log('--------Successfully seeded database--------');
+    console.log('--------Successfully seeded db--------');
   } 
   catch (err) {
     console.error('syncDB error:', err);
@@ -79,5 +79,5 @@ bootApp();
 
 /* ACTIVATE THE SERVER PORT */
 // Set up express application to use port 5000 as the access point for the server application.
-const PORT = process.env.PORT || 5000;  // Server application access point port number
+const PORT = 5000;  // Server application access point port number
 app.listen(PORT, console.log(`Server started on ${PORT}`));
