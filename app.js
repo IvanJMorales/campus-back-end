@@ -11,6 +11,9 @@ const seedDB = require('./database/utils/seedDB');  // Import function to seed d
 // Import database instance for database connection (including database name, username, and password)
 const db = require('./database');
 
+// Import CORS 
+const cors = require("cors");
+
 /* MODEL SYNCHRONIZATION & DATABASE SEEDING */
 // Set up sync and seed process
 const syncDatabase = async () => {
@@ -34,6 +37,12 @@ const syncDatabase = async () => {
 const express = require("express");
 // Create an Express application called "app"
 const app = express();
+
+// CORS
+var corsOptions = {
+  origin: "*"
+};
+app.use(cors(corsOptions));
 
 /* SET UP ROUTES */
 // Import sub-routes and associated router functions

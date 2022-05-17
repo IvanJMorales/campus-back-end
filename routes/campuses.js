@@ -8,7 +8,6 @@ const express = require('express');
 const router = express.Router();
 // Import database models
 const { Student, Campus } = require('../database/models');
-
 // Import a middleware to replace "try and catch" for request handler, for a concise coding (fewer lines of code)
 const ash = require('express-async-handler');
 
